@@ -34,9 +34,11 @@ public class Manager {
 		return manager;
 	}
 	
-	private void createSession() {
+	private void createSession() {  
+		//load configuration file 
+		Configuration configuration = new Configuration().configure("hibernate.cfg.xml");
 		org.hibernate.SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory();
-    	session = sessionFactory.openSession();
+		session = sessionFactory.openSession();
 	}
 
 	public void init() {
@@ -46,6 +48,7 @@ public class Manager {
 		showAllCampos();
 		session.close();
 	}
+	
 
 	private void manageActions() {
 		for (Entrada entrada : this.entradas) {
