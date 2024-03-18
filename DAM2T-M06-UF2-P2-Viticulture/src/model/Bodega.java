@@ -19,7 +19,7 @@ public class Bodega {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO)
-	@Column(name = "id", unique = true, nullable = true)
+	@Column(name = "id",nullable = false, unique = true)
 	private int id_bodega;
 	
 	@Column(name = "nombre")
